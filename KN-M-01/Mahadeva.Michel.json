@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "6a0c59a4ec7eb206aef68d14"
+  },
+  "adresse": "Lindauerstrasse 21, 8304 Effretikon",
+  "groesse": 185,
+  "geburtsdatum": {
+    "$date": "2008-09-20T00:00:00.000Z"
+  }
+}]

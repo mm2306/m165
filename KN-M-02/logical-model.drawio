@@ -1,0 +1,166 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="3TQDL1ov-uunVuBJ0YeX">
+    <mxGraphModel dx="4040" dy="2483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Collection: gigs" vertex="1">
+          <mxGeometry height="382" width="1255" x="1378" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="setlist[] embedded" vertex="1">
+          <mxGeometry height="332" width="224" x="1413" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-3" parent="R9gLOO6M6-Q7zQ1xSnk1-2" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="songId: int" vertex="1">
+          <mxGeometry height="54" width="134" x="53" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-4" parent="R9gLOO6M6-Q7zQ1xSnk1-2" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="position: int" vertex="1">
+          <mxGeometry height="54" width="141" x="50" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-5" parent="R9gLOO6M6-Q7zQ1xSnk1-2" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="encore: char" vertex="1">
+          <mxGeometry height="54" width="149" x="46" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Collection: albums" vertex="1">
+          <mxGeometry height="382" width="1338" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="tracks[] embedded" vertex="1">
+          <mxGeometry height="332" width="232" x="91" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-8" parent="R9gLOO6M6-Q7zQ1xSnk1-7" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="trackNo: int" vertex="1">
+          <mxGeometry height="54" width="141" x="54" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-9" parent="R9gLOO6M6-Q7zQ1xSnk1-7" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="songId: int" vertex="1">
+          <mxGeometry height="54" width="134" x="57" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-10" parent="R9gLOO6M6-Q7zQ1xSnk1-7" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="isBonus: char" vertex="1">
+          <mxGeometry height="54" width="157" x="46" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-11" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Collection: songs" vertex="1">
+          <mxGeometry height="540" width="258" x="83" y="452" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-12" parent="R9gLOO6M6-Q7zQ1xSnk1-11" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="songId: int" vertex="1">
+          <mxGeometry height="54" width="134" x="70" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-13" parent="R9gLOO6M6-Q7zQ1xSnk1-11" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="bandId: int" vertex="1">
+          <mxGeometry height="54" width="135" x="70" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-14" parent="R9gLOO6M6-Q7zQ1xSnk1-11" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="title: string" vertex="1">
+          <mxGeometry height="54" width="133" x="70" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-15" parent="R9gLOO6M6-Q7zQ1xSnk1-11" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="durationMin: float" vertex="1">
+          <mxGeometry height="54" width="183" x="46" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-16" parent="R9gLOO6M6-Q7zQ1xSnk1-11" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="bpm: int" vertex="1">
+          <mxGeometry height="54" width="117" x="78" y="459" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-17" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Collection: musicians" vertex="1">
+          <mxGeometry height="436" width="324" x="710" y="1474" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-18" parent="R9gLOO6M6-Q7zQ1xSnk1-17" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="musicianId: int" vertex="1">
+          <mxGeometry height="54" width="162" x="89" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-19" parent="R9gLOO6M6-Q7zQ1xSnk1-17" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="stageName: string" vertex="1">
+          <mxGeometry height="54" width="190" x="75" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-20" parent="R9gLOO6M6-Q7zQ1xSnk1-17" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="mainInstrumentCode: char" vertex="1">
+          <mxGeometry height="54" width="249" x="46" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-21" parent="R9gLOO6M6-Q7zQ1xSnk1-17" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="email: string" vertex="1">
+          <mxGeometry height="54" width="146" x="97" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-22" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Collection: bands" vertex="1">
+          <mxGeometry height="382" width="1926" x="112" y="1042" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-23" parent="1" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="members[] embedded" vertex="1">
+          <mxGeometry height="332" width="252" x="746" y="1067" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-24" parent="R9gLOO6M6-Q7zQ1xSnk1-23" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="musicianId: int" vertex="1">
+          <mxGeometry height="54" width="162" x="53" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-25" parent="R9gLOO6M6-Q7zQ1xSnk1-23" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="role: string" vertex="1">
+          <mxGeometry height="54" width="135" x="66" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-26" parent="R9gLOO6M6-Q7zQ1xSnk1-23" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="joinedDate: date" vertex="1">
+          <mxGeometry height="54" width="177" x="46" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-27" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="bandId: int" vertex="1">
+          <mxGeometry height="54" width="135" x="1238" y="1206" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-28" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="name: string" vertex="1">
+          <mxGeometry height="54" width="148" x="1423" y="1206" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-29" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="formedDate: date" vertex="1">
+          <mxGeometry height="54" width="184" x="1621" y="1206" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-30" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="genre: string" vertex="1">
+          <mxGeometry height="54" width="149" x="1854" y="1206" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-31" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="albumId: int" vertex="1">
+          <mxGeometry height="54" width="143" x="373" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-32" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="bandId: int" vertex="1">
+          <mxGeometry height="54" width="135" x="566" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-33" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="title: string" vertex="1">
+          <mxGeometry height="54" width="133" x="751" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-34" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="releaseDate: date" vertex="1">
+          <mxGeometry height="54" width="186" x="934" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-35" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="format: string" vertex="1">
+          <mxGeometry height="54" width="153" x="1170" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-36" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="gigId: int" vertex="1">
+          <mxGeometry height="54" width="120" x="1687" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-37" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="bandId: int" vertex="1">
+          <mxGeometry height="54" width="135" x="1858" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-38" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="venue: string" vertex="1">
+          <mxGeometry height="54" width="152" x="2043" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-39" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="date: date" vertex="1">
+          <mxGeometry height="54" width="131" x="2244" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-40" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="ticketPrice: float" vertex="1">
+          <mxGeometry height="54" width="173" x="2425" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-41" edge="1" parent="1" source="R9gLOO6M6-Q7zQ1xSnk1-23" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="R9gLOO6M6-Q7zQ1xSnk1-17" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-42" edge="1" parent="1" source="R9gLOO6M6-Q7zQ1xSnk1-11" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;rounded=0;" target="R9gLOO6M6-Q7zQ1xSnk1-22" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-43" edge="1" parent="1" source="R9gLOO6M6-Q7zQ1xSnk1-6" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;rounded=0;" target="R9gLOO6M6-Q7zQ1xSnk1-22" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-44" edge="1" parent="1" source="R9gLOO6M6-Q7zQ1xSnk1-1" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;rounded=0;" target="R9gLOO6M6-Q7zQ1xSnk1-22" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-45" edge="1" parent="1" source="R9gLOO6M6-Q7zQ1xSnk1-7" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.16;exitY=1;entryX=0.16;entryY=0;rounded=0;" target="R9gLOO6M6-Q7zQ1xSnk1-11" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="115" y="402" />
+              <mxPoint x="115" y="427" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="R9gLOO6M6-Q7zQ1xSnk1-46" edge="1" parent="1" source="R9gLOO6M6-Q7zQ1xSnk1-2" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.29;exitY=1;entryX=1;entryY=0.44;rounded=0;" target="R9gLOO6M6-Q7zQ1xSnk1-11" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1472" y="402" />
+              <mxPoint x="1335" y="427" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

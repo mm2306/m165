@@ -1,0 +1,2 @@
+mongosh "mongodb://admin:MyPassword.45@3.212.243.189:27017/BandProject?authSource=test" --eval "db.adminCommand('ping')" > /projects/m165/KN-M-05/screenshots/A1_wrong_auth.txt 2>&1
+convert -background "#1e1e1e" -fill "#d4d4d4" -font "monospace" -pointsize 16 -border 20 -bordercolor "#1e1e1e" text:/projects/m165/KN-M-05/screenshots/A1_wrong_auth.txt /projects/m165/KN-M-05/screenshots/A1_wrong_auth.png

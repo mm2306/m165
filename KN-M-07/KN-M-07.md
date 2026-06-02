@@ -57,4 +57,4 @@ except Exception as e:
 
 Das Skript wurde erfolgreich in der Terminalumgebung ausgeführt. Das Dokument konnte der Collection hinzugefügt, fehlerfrei ausgelesen und abschließend wieder gelöscht werden. Die Schema-Validierung der Datenbank wurde dabei erfolgreich respektiert.
 
-![Python MongoDB Test Ausführung](../screenshots/01_python_mongodb_test.png)
+![Python MongoDB Test Ausführung](./screenshots/01_python_mongodb_test.png)

@@ -72,9 +72,9 @@ db.getCollectionInfos({ name: "musicians" });
 **1. Screenshot der erfolgreichen Validierungs-Zuweisung**
 Dieser Screenshot zeigt, wie die Validierung via `collMod` hinzugefügt und über `getCollectionInfos` erfolgreich ausgelesen wird.
 
-![Validierung hinzugefügt](../screenshots/01_validation_added.png)
+![Validierung hinzugefügt](./screenshots/01_validation_added.png)
 
 **2. Screenshot der Validierungs-Tests (Gültig vs. Ungültig)**
 Dieser Screenshot verifiziert, dass korrekte Dokumente akzeptiert werden, während ungültige Dokumente (z.B. falsches E-Mail Format) durch den Schema-Validator blockiert werden (`MongoServerError: Document failed validation`).
 
-![Validierung Test](../screenshots/02_validation_test.png)
+![Validierung Test](./screenshots/02_validation_test.png)

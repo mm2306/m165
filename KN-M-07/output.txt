@@ -1,4 +1,0 @@
-Connected successfully to local MongoDB!
-Inserted document with ID: 6a1ec2ee0a12f03aa0ed62a7
-Found document: {'_id': ObjectId('6a1ec2ee0a12f03aa0ed62a7'), 'stageName': 'Test Python', 'mainInstrumentCode': 'P', 'email': 'python@mongo.local'}
-Cleaned up test document.

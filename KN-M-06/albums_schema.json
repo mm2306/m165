@@ -1,0 +1,47 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "title",
+      "releaseDate",
+      "format",
+      "bandId"
+    ],
+    "properties": {
+      "title": {
+        "bsonType": "string"
+      },
+      "releaseDate": {
+        "bsonType": "date"
+      },
+      "format": {
+        "bsonType": "string"
+      },
+      "bandId": {
+        "bsonType": "objectId"
+      },
+      "tracks": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": [
+            "songId",
+            "trackNo",
+            "isBonus"
+          ],
+          "properties": {
+            "songId": {
+              "bsonType": "objectId"
+            },
+            "trackNo": {
+              "bsonType": "int"
+            },
+            "isBonus": {
+              "bsonType": "bool"
+            }
+          }
+        }
+      }
+    }
+  }
+}

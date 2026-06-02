@@ -1,0 +1,46 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "name",
+      "formedDate",
+      "genre"
+    ],
+    "properties": {
+      "name": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "formedDate": {
+        "bsonType": "date",
+        "description": "must be a date and is required"
+      },
+      "genre": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "members": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": [
+            "musicianId",
+            "role",
+            "joinedDate"
+          ],
+          "properties": {
+            "musicianId": {
+              "bsonType": "objectId"
+            },
+            "role": {
+              "bsonType": "string"
+            },
+            "joinedDate": {
+              "bsonType": "date"
+            }
+          }
+        }
+      }
+    }
+  }
+}

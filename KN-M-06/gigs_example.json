@@ -1,0 +1,13 @@
+{
+  "venue": "Madison Square Garden",
+  "date": "1973-07-27T00:00:00Z",
+  "ticketPrice": 7.5,
+  "bandId": "5f8f8c44b54764421b7156d2",
+  "setlist": [
+    {
+      "songId": "5f8f8c44b54764421b7156d3",
+      "position": 1,
+      "encore": false
+    }
+  ]
+}

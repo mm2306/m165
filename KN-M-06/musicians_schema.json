@@ -1,0 +1,25 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "stageName",
+      "mainInstrumentCode",
+      "email"
+    ],
+    "properties": {
+      "stageName": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "mainInstrumentCode": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "email": {
+        "bsonType": "string",
+        "pattern": "^.+@.+$",
+        "description": "must be a string matching email pattern and is required"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "title",
+      "durationMin",
+      "bpm",
+      "bandId"
+    ],
+    "properties": {
+      "title": {
+        "bsonType": "string"
+      },
+      "durationMin": {
+        "bsonType": [
+          "double",
+          "int"
+        ]
+      },
+      "bpm": {
+        "bsonType": [
+          "int",
+          "double"
+        ]
+      },
+      "bandId": {
+        "bsonType": "objectId"
+      }
+    }
+  }
+}

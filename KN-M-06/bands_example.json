@@ -1,0 +1,12 @@
+{
+  "name": "Led Zeppelin",
+  "formedDate": "1968-09-01T00:00:00Z",
+  "genre": "Hard Rock",
+  "members": [
+    {
+      "musicianId": "5f8f8c44b54764421b7156d1",
+      "role": "Guitarist",
+      "joinedDate": "1968-09-01T00:00:00Z"
+    }
+  ]
+}

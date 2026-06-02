@@ -1,0 +1,13 @@
+{
+  "title": "Led Zeppelin IV",
+  "releaseDate": "1971-11-08T00:00:00Z",
+  "format": "LP",
+  "bandId": "5f8f8c44b54764421b7156d2",
+  "tracks": [
+    {
+      "songId": "5f8f8c44b54764421b7156d3",
+      "trackNo": 4,
+      "isBonus": false
+    }
+  ]
+}

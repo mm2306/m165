@@ -135,8 +135,27 @@ public class Neo4jApp {
 
 ## 3. Ausführung & Validierung
 
+### Projekt ausführen (Anleitung)
+Um das Java-Neo4j-Projekt auszuführen, gehen Sie wie folgt vor:
+
+1. **In das Verzeichnis `app` wechseln:**
+   ```bash
+   cd KN-N-03/app
+   ```
+2. **Kompilieren und Ausführen:**
+   * **Option A: Mit der lokalen Maven-Installation aus KN-C-03:**
+     ```bash
+     ../../KN-C-03/maven/bin/mvn clean compile
+     ../../KN-C-03/maven/bin/mvn exec:java
+     ```
+   * **Option B: Mit einer globalen Maven-Installation (falls vorhanden):**
+     ```bash
+     mvn clean compile
+     mvn exec:java
+     ```
+
 ### Screenshot 1: Ausführung des Java-Programms
-Das Programm wurde über Maven innerhalb einer JDK-Laufzeitumgebung ausgeführt:
+Das Programm wurde über Maven ausgeführt:
 
 ![Java Run Output](./screenshots/01_java_run.png)
 

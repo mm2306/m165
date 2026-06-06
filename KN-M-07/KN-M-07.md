@@ -55,6 +55,23 @@ except Exception as e:
 
 ## 4. Ausführung und Ergebnisse
 
+### Projekt ausführen (Anleitung)
+Um das Python-Skript auszuführen, gehen Sie wie folgt vor:
+
+1. **In das Projektverzeichnis wechseln:**
+   ```bash
+   cd KN-M-07
+   ```
+2. **Erforderliche Abhängigkeiten installieren (falls nicht bereits vorhanden):**
+   ```bash
+   pip install pymongo
+   ```
+3. **Skript ausführen:**
+   ```bash
+   python mongo_test.py
+   ```
+
+### Screenshot: Erfolgreiche Ausführung
 Das Skript wurde erfolgreich in der Terminalumgebung ausgeführt. Das Dokument konnte der Collection hinzugefügt, fehlerfrei ausgelesen und abschließend wieder gelöscht werden. Die Schema-Validierung der Datenbank wurde dabei erfolgreich respektiert.
 
 ![Python MongoDB Test Ausführung](./screenshots/01_python_mongodb_test.png)

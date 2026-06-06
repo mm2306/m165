@@ -1,0 +1,6 @@
+USE band_project;
+
+TRUNCATE band_members_by_band;
+TRUNCATE albums_by_band;
+TRUNCATE tracks_by_album;
+TRUNCATE gigs_by_band;

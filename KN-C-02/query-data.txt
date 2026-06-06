@@ -1,0 +1,21 @@
+USE band_project;
+
+-- Query 1 (Q1: Band Members): Get all members of Band 1 (The Rockers)
+SELECT musician_id, stage_name, role, main_instrument_code, joined_date, email 
+FROM band_members_by_band 
+WHERE band_id = 1;
+
+-- Query 2 (Q2: Band Albums): Get all albums of Band 1 (sorted by release_date desc)
+SELECT release_date, album_id, album_title, format 
+FROM albums_by_band 
+WHERE band_id = 1;
+
+-- Query 3 (Q3: Album Tracks): Get all tracks of Album 201 (sorted by track_no asc)
+SELECT track_no, song_id, song_title, duration_min, bpm 
+FROM tracks_by_album 
+WHERE album_id = 201;
+
+-- Query 4 (Q4: Band Gigs): Get all gigs of Band 1 (sorted by gig_date desc)
+SELECT gig_date, gig_id, venue, ticket_price 
+FROM gigs_by_band 
+WHERE band_id = 1;

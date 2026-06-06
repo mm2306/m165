@@ -1,0 +1,68 @@
+USE band_project;
+
+-- Populating band_members_by_band
+INSERT INTO band_members_by_band (band_id, musician_id, band_name, formed_date, genre, stage_name, role, main_instrument_code, joined_date, email) 
+VALUES (1, 101, 'The Rockers', '2019-03-01', 'Rock', 'Johnny Vocal', 'Singer', 'V', '2019-03-01', 'johnny@rockers.com');
+
+INSERT INTO band_members_by_band (band_id, musician_id, band_name, formed_date, genre, stage_name, role, main_instrument_code, joined_date, email) 
+VALUES (1, 102, 'The Rockers', '2019-03-01', 'Rock', 'Slash Jr.', 'Guitarist', 'G', '2019-04-10', 'slash.jr@rockers.com');
+
+INSERT INTO band_members_by_band (band_id, musician_id, band_name, formed_date, genre, stage_name, role, main_instrument_code, joined_date, email) 
+VALUES (1, 103, 'The Rockers', '2019-03-01', 'Rock', 'Beasty Drummer', 'Drummer', 'D', '2020-01-15', 'drums@rockers.com');
+
+INSERT INTO band_members_by_band (band_id, musician_id, band_name, formed_date, genre, stage_name, role, main_instrument_code, joined_date, email) 
+VALUES (2, 104, 'Jazz Quartet', '2021-01-01', 'Jazz', 'Alice Keys', 'Pianist', 'P', '2021-01-01', 'alice@jazzquartet.com');
+
+INSERT INTO band_members_by_band (band_id, musician_id, band_name, formed_date, genre, stage_name, role, main_instrument_code, joined_date, email) 
+VALUES (2, 105, 'Jazz Quartet', '2021-01-01', 'Jazz', 'Charlie Sax', 'Saxophonist', 'S', '2021-02-12', 'charlie@jazzquartet.com');
+
+
+-- Populating albums_by_band
+INSERT INTO albums_by_band (band_id, release_date, album_id, album_title, band_name, format) 
+VALUES (1, '2020-05-15', 201, 'Rock Anthem', 'The Rockers', 'CD');
+
+INSERT INTO albums_by_band (band_id, release_date, album_id, album_title, band_name, format) 
+VALUES (1, '2022-11-20', 202, 'Loud & Heavy', 'The Rockers', 'Vinyl');
+
+INSERT INTO albums_by_band (band_id, release_date, album_id, album_title, band_name, format) 
+VALUES (1, '2024-01-10', 203, 'Acoustic Session', 'The Rockers', 'Digital');
+
+INSERT INTO albums_by_band (band_id, release_date, album_id, album_title, band_name, format) 
+VALUES (2, '2021-08-05', 204, 'Blue Note', 'Jazz Quartet', 'Vinyl');
+
+INSERT INTO albums_by_band (band_id, release_date, album_id, album_title, band_name, format) 
+VALUES (2, '2023-04-12', 205, 'Midnight Jam', 'Jazz Quartet', 'CD');
+
+
+-- Populating tracks_by_album
+INSERT INTO tracks_by_album (album_id, track_no, album_title, song_id, song_title, duration_min, bpm) 
+VALUES (201, 1, 'Rock Anthem', 301, 'Intro', 1.5, 100);
+
+INSERT INTO tracks_by_album (album_id, track_no, album_title, song_id, song_title, duration_min, bpm) 
+VALUES (201, 2, 'Rock Anthem', 302, 'The Anthem', 4.2, 120);
+
+INSERT INTO tracks_by_album (album_id, track_no, album_title, song_id, song_title, duration_min, bpm) 
+VALUES (201, 3, 'Rock Anthem', 303, 'Outro', 2.1, 95);
+
+INSERT INTO tracks_by_album (album_id, track_no, album_title, song_id, song_title, duration_min, bpm) 
+VALUES (204, 1, 'Blue Note', 304, 'Jazz Standard', 6.5, 80);
+
+INSERT INTO tracks_by_album (album_id, track_no, album_title, song_id, song_title, duration_min, bpm) 
+VALUES (204, 2, 'Blue Note', 305, 'Swing Time', 5.2, 110);
+
+
+-- Populating gigs_by_band
+INSERT INTO gigs_by_band (band_id, gig_date, gig_id, band_name, venue, ticket_price) 
+VALUES (1, '2025-06-12', 401, 'The Rockers', 'Hallenstadion', 85.0);
+
+INSERT INTO gigs_by_band (band_id, gig_date, gig_id, band_name, venue, ticket_price) 
+VALUES (1, '2026-03-24', 402, 'The Rockers', 'Openair Gampel', 120.0);
+
+INSERT INTO gigs_by_band (band_id, gig_date, gig_id, band_name, venue, ticket_price) 
+VALUES (1, '2026-08-15', 403, 'The Rockers', 'Bierhübeli', 45.0);
+
+INSERT INTO gigs_by_band (band_id, gig_date, gig_id, band_name, venue, ticket_price) 
+VALUES (2, '2025-09-05', 404, 'Jazz Quartet', 'Moods', 35.0);
+
+INSERT INTO gigs_by_band (band_id, gig_date, gig_id, band_name, venue, ticket_price) 
+VALUES (2, '2026-05-10', 405, 'Jazz Quartet', 'Montreux Jazz Festival', 90.0);

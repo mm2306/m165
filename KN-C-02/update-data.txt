@@ -1,0 +1,18 @@
+USE band_project;
+
+-- Scenario 1: Update role of musician 102 in Band 1
+UPDATE band_members_by_band 
+SET role = 'Lead-Guitarist' 
+WHERE band_id = 1 AND musician_id = 102;
+
+-- Scenario 2: Reschedule a gig (Clustering Key cannot be updated directly; requires DELETE + INSERT)
+DELETE FROM gigs_by_band 
+WHERE band_id = 1 AND gig_date = '2026-03-24' AND gig_id = 402;
+
+INSERT INTO gigs_by_band (band_id, gig_date, gig_id, band_name, venue, ticket_price) 
+VALUES (1, '2026-04-15', 402, 'The Rockers', 'Openair Gampel', 120.0);
+
+-- Scenario 3: Update the ticket price of a specific gig
+UPDATE gigs_by_band 
+SET ticket_price = 55.0 
+WHERE band_id = 1 AND gig_date = '2026-08-15' AND gig_id = 403;

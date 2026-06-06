@@ -1,0 +1,9 @@
+USE band_project;
+
+-- 1. Delete a specific row (Beasty Drummer, musician_id = 103 from Band 1)
+DELETE FROM band_members_by_band 
+WHERE band_id = 1 AND musician_id = 103;
+
+-- 2. Delete a specific column value (email of Slash Jr., musician_id = 102 from Band 1)
+DELETE email FROM band_members_by_band 
+WHERE band_id = 1 AND musician_id = 102;

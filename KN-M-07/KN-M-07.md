@@ -5,9 +5,9 @@ In diesem Kompetenznachweis (KN) greifen wir mithilfe einer Programmiersprache a
 
 ## 2. Verbindung zur Datenbank (Connection String)
 
-Um eine erfolgreiche Verbindung mit der Datenbank aufzubauen, verwenden wir in verteilten Umgebungen typischerweise einen Connection String dieses Formats:
-`mongodb://admin:MyPassword.45@3.212.243.189:27017/BandProject?authSource=admin`
-Für die lokale Ausführung im Rahmen dieser Abgabe wurde auf `mongodb://localhost:27017/` zurückgegriffen.
+Um eine erfolgreiche Verbindung mit der Datenbank aufzubauen, verwenden wir den Connection String dieses Formats:
+`mongodb://admin:MyPassword.45@3.212.243.189:27017/BandProject?authSource=admin&directConnection=true`
+Für die Ausführung im Rahmen dieser Abgabe wurde auf die MongoDB-Instanz in AWS zurückgegriffen.
 
 ### Bedeutung von `authSource=admin`
 Der Parameter `?authSource=admin` ist entscheidend, wenn die Anmeldeinformationen (Credentials) eines Benutzers nicht in der Datenbank gespeichert sind, auf die er operativ zugreifen möchte, sondern in einer zentralen Administrationsdatenbank. 
@@ -25,10 +25,10 @@ Das folgende Python-Skript (`mongo_test.py`) stellt die Verbindung her und führ
 import pymongo
 
 try:
-    # Verbindung zur lokalen Instanz herstellen
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    # Verbindung zur AWS MongoDB-Instanz herstellen
+    client = pymongo.MongoClient("mongodb://admin:MyPassword.45@3.212.243.189:27017/BandProject?authSource=admin&directConnection=true")
     client.admin.command('ping')
-    print("Connected successfully to local MongoDB!")
+    print("Connected successfully to AWS MongoDB!")
     
     db = client["BandProject"]
     collection = db["musicians"]

@@ -1,10 +1,10 @@
 import pymongo
 
 try:
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
+    client = pymongo.MongoClient("mongodb://admin:MyPassword.45@3.212.243.189:27017/BandProject?authSource=admin&directConnection=true")
     # Test connection
     client.admin.command('ping')
-    print("Connected successfully to local MongoDB!")
+    print("Connected successfully to AWS MongoDB!")
     
     # Use a database
     db = client["BandProject"]

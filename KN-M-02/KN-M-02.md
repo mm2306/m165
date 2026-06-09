@@ -90,7 +90,7 @@ Quelldatei: [`logical-model.drawio`](./logical-model.drawio)
 
 ## C) Anwendung in MongoDB (10 %)
 
-**Datenbank:** `BandProject` — zuerst `use BandProject;` (einzeln), danach Script.
+**Datenbank:** `BandProject` — zuerst `use BandProject;`, danach Script.
 
 ### Script
 

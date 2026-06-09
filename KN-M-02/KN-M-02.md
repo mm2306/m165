@@ -8,7 +8,7 @@
 
 ## A) Konzeptionelles Datenmodell (30 %)
 
-### Abgabe: Diagramm
+### Diagramm
 
 Quelldatei: [`conceptual-model.drawio`](./conceptual-model.drawio)
 
@@ -45,9 +45,7 @@ Die **N:N-Beziehung** Musician ↔ Band wird über **Membership** aufgelöst. Ei
 
 ## B) Logisches Modell für MongoDB (60 %)
 
-**Kein JSON-Schema** in dieser Aufgabe.
-
-### Abgabe: Diagramm
+### Diagramm
 
 Quelldatei: [`logical-model.drawio`](./logical-model.drawio)
 
@@ -94,7 +92,7 @@ Quelldatei: [`logical-model.drawio`](./logical-model.drawio)
 
 **Datenbank:** `BandProject` — zuerst `use BandProject;` (einzeln), danach Script.
 
-### Abgabe: Script
+### Script
 
 [`create-collections.js`](./create-collections.js)
 

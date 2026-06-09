@@ -8,7 +8,6 @@ Die Neo4j-Datenbank wurde erfolgreich konfiguriert und gestartet (bereitgestellt
 
 ![Connection Test](./screenshots/01_connection_test.png)
 
-*Der Screenshot zeigt den erfolgreichen Verbindungsaufbau zur Neo4j-Datenbank über die `cypher-shell`.*
 
 ### Theorie: Connection Strings und Authentifizierung
 In Neo4j wird typischerweise das `neo4j://` oder `bolt://` Protokoll für Verbindungen genutzt. 

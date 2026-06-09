@@ -10,8 +10,6 @@ Um das Datenmodell zu testen, wurden den Tabellen Testdatensätze hinzugefügt. 
 
 * Die SQL/CQL-Befehle befinden sich in der Datei [`insert-data.txt`](./insert-data.txt).
 
-### Screenshot: Daten erfolgreich hinzugefügt
-
 ![Daten hinzufügen](./screenshots/01_insert_data.png)
 
 ---
@@ -26,8 +24,6 @@ Die in KN-C-01 definierten Query-Szenarien wurden in CQL umgesetzt und ausgefüh
 4. **Q4 (Konzerte):** Abfrage aller Gigs von Band 1 (automatisch absteigend nach `gig_date` sortiert).
 
 * Die Abfrage-Befehle befinden sich in der Datei [`query-data.txt`](./query-data.txt).
-
-### Screenshot: Abfragen ausführen
 
 ![Daten abfragen](./screenshots/02_query_data.png)
 
@@ -50,8 +46,6 @@ Es wurden gezielte Löschoperationen durchgeführt, um die Flexibilität von Cas
 * **Ja, das ist möglich.** Mit der Syntax `DELETE spaltenname FROM tabelle WHERE ...` kann der Wert einer einzelnen Spalte in einer bestimmten Zeile entfernt werden.
 * **Funktionsweise im Hintergrund:** Cassandra löscht Daten nicht sofort von der Festplatte, da dies bei einer verteilten Log-Structured Merge-tree (LSM) Speicherarchitektur sehr ineffizient wäre. Stattdessen wird ein sogenannter **Tombstone** (Grabstein) geschrieben. Dies ist ein spezieller Marker mit einem Zeitstempel, der besagt, dass diese Spalte gelöscht wurde. Bei Lesezugriffen überschreibt der neuere Tombstone-Wert den alten Wert und die Spalte wird dem Client als `null` zurückgegeben. Bei der nächsten Speicher-Kompression (Compaction) werden die alten Daten und der Tombstone endgültig physisch von der Festplatte gelöscht.
 * **Einschränkung:** Spalten, die Teil des Primärschlüssels (Partition Key oder Clustering Keys) sind, können **nicht** einzeln gelöscht werden, da sie die Identität der Zeile bestimmen.
-
-### Screenshot: Löschoperationen verifizieren
 
 ![Daten löschen](./screenshots/03_delete_data.png)
 
@@ -96,7 +90,5 @@ Updates in Cassandra verhalten sich aufgrund der Partitionierung anders als in r
   WHERE band_id = 1 AND gig_date = '2026-08-15' AND gig_id = 403;
   ```
 * **Erklärung:** Auch hier müssen alle Komponenten des Primärschlüssels (`band_id`, `gig_date`, `gig_id`) angegeben werden. Da `ticket_price` eine reguläre Spalte ist, erfolgt das Update problemlos.
-
-### Screenshot: Updates verifizieren
 
 ![Daten aktualisieren](./screenshots/04_update_data.png)

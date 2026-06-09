@@ -238,7 +238,6 @@ Um das Java-Projekt auszuführen, führen Sie folgende Befehle im Terminal aus:
    ```
    *Hinweis:* Falls Sie eine globale Maven-Installation besitzen, können Sie auch direkt `mvn clean compile` und `mvn exec:java` ausführen.
 
-### Screenshot: Verbindungstest und Abfragen in Java ausgeführt
 ![Verbindungstest und Abfragen](./screenshots/01_connection_and_query.png)
 
 ---

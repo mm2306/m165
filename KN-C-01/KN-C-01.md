@@ -8,8 +8,6 @@
 
 Die Cassandra-Datenbank wurde erfolgreich als Docker-Container auf der lokalen Instanz eingerichtet und gestartet. Für die Verwaltung und Ausführung von Befehlen wird das Command-Line-Tool `cqlsh` verwendet.
 
-### Screenshot: Erfolgreicher Verbindungstest via `cqlsh`
-
 ![Connection Test](./screenshots/01_connection_test.png)
 
 ---
@@ -39,7 +37,6 @@ Als Grundlage dient das konzeptionelle Modell des "Music band"-Projekts. Für di
 3. **Q3 (Trackliste):** Gib alle Songs eines Albums aus, sortiert nach der Tracknummer.
 4. **Q4 (Konzertliste):** Gib alle Live-Auftritte einer Band aus, sortiert nach dem Datum (neueste zuerst).
 
-### Screenshot: Visuelle Darstellung des logischen Datenmodells
 
 ![Logisches Datenmodell](./screenshots/02_logical_model.png)
 
@@ -76,8 +73,6 @@ Der Primärschlüssel (`PRIMARY KEY`) setzt sich in Cassandra aus dem **Partitio
 ## C) Physisches Modell für Cassandra (50%)
 
 Das physische Modell wird durch das CQL-Skript [`create-schema.cql`](./create-schema.cql) erzeugt. Es setzt die im logischen Modell definierten Tabellenstrukturen inklusive Datentypen und Clustering-Reihenfolgen um.
-
-### Screenshot: Erfolgreiche Erstellung des physischen Modells
 
 ![Physical Model Created](./screenshots/03_physical_model_created.png)
 

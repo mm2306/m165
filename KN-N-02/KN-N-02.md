@@ -2,32 +2,59 @@
 
 ## A) Daten hinzufügen
 
-Für die initialen Daten wurde ein einzelnes, umfangreiches `CREATE`-Statement verwendet, welches mehrere Filme, Personen und deren Beziehungen zueinander erstellt.
+Für die initialen Daten wurde ein einzelnes, umfangreiches `CREATE`-Statement verwendet, welches mehrere Musiker, Bands, Songs, Alben, Auftritte (Gigs) und deren Beziehungen zueinander erstellt. Die Daten basieren auf dem Band-Projekt aus den vorherigen Modulen (KN-M-03, KN-N-01).
 
 ### Cypher-Statement
 
 ```cypher
 CREATE 
-  (m1:Movie {title: 'The Matrix', released: 1999, tagline: 'Welcome to the Real World'}),
-  (m2:Movie {title: 'Inception', released: 2010, tagline: 'Your mind is the scene of the crime'}),
-  (m3:Movie {title: 'Interstellar', released: 2014, tagline: 'Mankind was born on Earth. It was never meant to die here.'}),
-  (m4:Movie {title: 'The Dark Knight', released: 2008, tagline: 'Why So Serious?'}),
+  (m1:Musician {musicianId: 'm1', stageName: 'Jimmy Page', mainInstrumentCode: 'G', email: 'jimmy.page@ledzeppelin.com'}),
+  (m2:Musician {musicianId: 'm2', stageName: 'Robert Plant', mainInstrumentCode: 'V', email: 'robert.plant@ledzeppelin.com'}),
+  (m3:Musician {musicianId: 'm3', stageName: 'John Paul Jones', mainInstrumentCode: 'B', email: 'jpj@ledzeppelin.com'}),
+  (m4:Musician {musicianId: 'm4', stageName: 'John Bonham', mainInstrumentCode: 'D', email: 'bonzo@ledzeppelin.com'}),
+  (m5:Musician {musicianId: 'm5', stageName: 'Freddie Mercury', mainInstrumentCode: 'V', email: 'freddie@queen.com'}),
   
-  (p1:Person {name: 'Keanu Reeves', born: 1964}),
-  (p2:Person {name: 'Carrie-Anne Moss', born: 1967}),
-  (p3:Person {name: 'Leonardo DiCaprio', born: 1974}),
-  (p4:Person {name: 'Matthew McConaughey', born: 1969}),
-  (p5:Person {name: 'Christopher Nolan', born: 1970}),
-  (p6:Person {name: 'Christian Bale', born: 1974}),
+  (b1:Band {bandId: 'b1', name: 'Led Zeppelin', formedDate: date('1968-09-01'), genre: 'Hard Rock'}),
+  (b2:Band {bandId: 'b2', name: 'Queen', formedDate: date('1970-06-01'), genre: 'Rock'}),
+  (b3:Band {bandId: 'b3', name: 'The Who', formedDate: date('1964-01-01'), genre: 'Rock'}),
   
-  (p1)-[:ACTED_IN {roles: ['Neo']}]->(m1),
-  (p2)-[:ACTED_IN {roles: ['Trinity']}]->(m1),
-  (p3)-[:ACTED_IN {roles: ['Cobb']}]->(m2),
-  (p5)-[:DIRECTED]->(m2),
-  (p4)-[:ACTED_IN {roles: ['Cooper']}]->(m3),
-  (p5)-[:DIRECTED]->(m3),
-  (p6)-[:ACTED_IN {roles: ['Bruce Wayne']}]->(m4),
-  (p5)-[:DIRECTED]->(m4);
+  (s1:Song {songId: 's1', title: 'Stairway to Heaven', durationMin: 8.02, bpm: 73}),
+  (s2:Song {songId: 's2', title: 'Whole Lotta Love', durationMin: 5.34, bpm: 90}),
+  (s3:Song {songId: 's3', title: 'Kashmir', durationMin: 8.28, bpm: 80}),
+  (s4:Song {songId: 's4', title: 'Bohemian Rhapsody', durationMin: 5.55, bpm: 72}),
+  (s5:Song {songId: 's5', title: 'Another One Bites the Dust', durationMin: 3.35, bpm: 110}),
+  (s6:Song {songId: 's6', title: 'We Will Rock You', durationMin: 2.01, bpm: 81}),
+  
+  (a1:Album {albumId: 'a1', title: 'Led Zeppelin IV', releaseDate: date('1971-11-08'), format: 'LP'}),
+  (a2:Album {albumId: 'a2', title: 'Led Zeppelin II', releaseDate: date('1969-10-22'), format: 'LP'}),
+  (a3:Album {albumId: 'a3', title: 'A Night at the Opera', releaseDate: date('1975-11-21'), format: 'LP'}),
+  (a4:Album {albumId: 'a4', title: 'The Game', releaseDate: date('1980-06-30'), format: 'LP'}),
+  
+  (g1:Gig {gigId: 'g1', venue: 'Madison Square Garden', date: date('1973-07-27'), ticketPrice: 7.50}),
+  (g2:Gig {gigId: 'g2', venue: 'Wembley Stadium', date: date('1986-07-12'), ticketPrice: 14.50}),
+  (g3:Gig {gigId: 'g3', venue: 'Royal Albert Hall', date: date('1970-01-09'), ticketPrice: 3.00}),
+  
+  (m1)-[:IS_MEMBER_OF {role: 'Guitarist', joinedDate: date('1968-09-01')}]->(b1),
+  (m2)-[:IS_MEMBER_OF {role: 'Vocalist', joinedDate: date('1968-09-01')}]->(b1),
+  (m3)-[:IS_MEMBER_OF {role: 'Bassist', joinedDate: date('1968-09-01')}]->(b1),
+  (m4)-[:IS_MEMBER_OF {role: 'Drummer', joinedDate: date('1968-09-01')}]->(b1),
+  (m5)-[:IS_MEMBER_OF {role: 'Lead Vocalist', joinedDate: date('1970-06-01')}]->(b2),
+  
+  (s1)-[:PERFORMED_BY]->(b1),
+  (s2)-[:PERFORMED_BY]->(b1),
+  (s3)-[:PERFORMED_BY]->(b1),
+  (s4)-[:PERFORMED_BY]->(b2),
+  (s5)-[:PERFORMED_BY]->(b2),
+  (s6)-[:PERFORMED_BY]->(b2),
+  
+  (a1)-[:INCLUDES {trackNo: 4, isBonus: false}]->(s1),
+  (a2)-[:INCLUDES {trackNo: 1, isBonus: false}]->(s2),
+  (a3)-[:INCLUDES {trackNo: 11, isBonus: false}]->(s4),
+  (a4)-[:INCLUDES {trackNo: 3, isBonus: false}]->(s5),
+  
+  (b1)-[:PERFORMED_AT]->(g1),
+  (b1)-[:PERFORMED_AT]->(g3),
+  (b2)-[:PERFORMED_AT]->(g2);
 ```
 
 ### Ausführung (Screenshot)
@@ -45,37 +72,37 @@ CREATE
 **Erklärung:**
 Das Statement zielt darauf ab, den vollständigen Inhalt der Datenbank abzurufen, unabhängig davon, ob Beziehungen existieren oder nicht.
 - `MATCH (n)`: Sucht zunächst nach allen Knoten in der Datenbank und weist sie der Variablen `n` zu.
-- `OPTIONAL MATCH (n)-[r]->(m)`: Dies ist das Äquivalent zu einem `LEFT OUTER JOIN` in SQL. Es sucht nach ausgehenden Beziehungen `r` von dem Knoten `n` zu einem Zielknoten `m`. Wenn für einen Knoten `n` keine solche Beziehung existiert, gibt Cypher nicht einfach ein leeres Ergebnis für `n` zurück. Stattdessen bleibt `n` erhalten, während `r` und `m` mit `null` (also "leer") gefüllt werden. 
+- `OPTIONAL MATCH (n)-[r]->(m)`: Dies ist das Äquivalent zu einem `LEFT OUTER JOIN` in SQL. Es sucht nach ausgehenden Beziehungen `r` von dem Knoten `n` zu einem Zielknoten `m`. Wenn für einen Knoten `n` keine solche Beziehung existiert, gibt Cypher nicht einfach ein leeres Ergebnis für `n` zurück. Stattdessen bleibt `n` erhalten, während `r` und `m` mit `null` (also "leer") gefüllt werden.
 - `RETURN n, r, m`: Gibt alle gefundenen Knoten, Beziehungen und Zielknoten zurück. Ohne `OPTIONAL MATCH` (also nur `MATCH (n)-[r]->(m)`) würden isolierte Knoten ohne jegliche Kanten im Ergebnis komplett fehlen.
 
 ### Szenarien zur Datenabfrage
 
-**Szenario 1:** Wir möchten herausfinden, welche Filme von "Christopher Nolan" inszeniert wurden.
+**Szenario 1:** Wir möchten herausfinden, welche Musiker Mitglieder der Band "Led Zeppelin" sind.
 ```cypher
-MATCH (p:Person)-[:DIRECTED]->(m:Movie) 
-WHERE p.name = 'Christopher Nolan' 
-RETURN m.title;
+MATCH (m:Musician)-[:IS_MEMBER_OF]->(b:Band) 
+WHERE b.name = 'Led Zeppelin' 
+RETURN m.stageName, m.mainInstrumentCode;
 ```
 
-**Szenario 2:** Wir suchen nach allen in der Datenbank erfassten Personen, die nach dem Jahr 1970 geboren wurden (Verwendung der `WHERE`-Klausel für Filterung).
+**Szenario 2:** Wir suchen nach allen Songs in der Datenbank, die länger als 6 Minuten dauern (Verwendung der `WHERE`-Klausel für numerische Filterung).
 ```cypher
-MATCH (p:Person) 
-WHERE p.born > 1970 
-RETURN p.name, p.born;
+MATCH (s:Song) 
+WHERE s.durationMin > 6 
+RETURN s.title, s.durationMin;
 ```
 
-**Szenario 3:** Wir suchen nach der genauen Rolle (`roles` Array auf der Beziehung) und dem Filmtitel für alle Schauspieler, die in Filmen mitgewirkt haben, die nach dem Jahr 2000 veröffentlicht wurden (Filtern von Eigenschaften auf Zielknoten).
+**Szenario 3:** Wir suchen nach den Rollen aller Musiker, die in Bands des Genres "Rock" spielen (Filtern von Eigenschaften auf Zielknoten und Ausgabe von Beziehungsattributen).
 ```cypher
-MATCH (p:Person)-[r:ACTED_IN]->(m:Movie) 
-WHERE m.released > 2000 
-RETURN p.name, r.roles, m.title;
+MATCH (m:Musician)-[r:IS_MEMBER_OF]->(b:Band) 
+WHERE b.genre = 'Rock' 
+RETURN m.stageName, r.role, b.name;
 ```
 
-**Szenario 4:** Wir möchten alle Filme auflisten, deren Titel mit dem Artikel "The" beginnt.
+**Szenario 4:** Wir möchten alle Alben auflisten, deren Titel mit dem Artikel "The" beginnt.
 ```cypher
-MATCH (m:Movie) 
-WHERE m.title STARTS WITH 'The' 
-RETURN m.title, m.released;
+MATCH (a:Album) 
+WHERE a.title STARTS WITH 'The' 
+RETURN a.title, a.releaseDate;
 ```
 
 ### Ausführung (Screenshot)
@@ -89,7 +116,7 @@ RETURN m.title, m.released;
 Die Klausel `DETACH DELETE` löscht nicht nur den angegebenen Knoten, sondern **zwingend auch alle damit verbundenen Beziehungen (Kanten)**. Wird nur `DELETE` auf einem Knoten verwendet, der noch über Beziehungen verfügt, bricht die Datenbank die Transaktion mit einer Fehlermeldung ab, um inkonsistente Zustände (sogenannte "Dangling Edges") zu vermeiden.
 
 ### Vorbereitung (Testdaten)
-Für diesen Test wurden zuvor zwei Dummy-Filme und zwei Dummy-Schauspieler inklusive Beziehungen erstellt.
+Für diesen Test wurden zuvor zwei Dummy-Songs und Dummy-Bands inklusive Beziehungen erstellt.
 
 ### Test 1: Löschen OHNE `DETACH`
 
@@ -97,9 +124,9 @@ Für diesen Test wurden zuvor zwei Dummy-Filme und zwei Dummy-Schauspieler inklu
 ![Test 1 Vorher](./screenshots/C_vorher_1.png)
 
 **Statement & Fehlgeschlagene Ausführung:**
-Wir versuchen, den Knoten zu löschen, ohne die bestehenden Beziehungen zu entfernen. Dies löst einen Fehler aus.
+Wir versuchen, den Song-Knoten zu löschen, ohne die bestehende `PERFORMED_BY`-Beziehung zu entfernen. Dies löst einen Fehler aus.
 ```cypher
-MATCH (m:Movie {title: 'Dummy Movie 1'}) DELETE m;
+MATCH (s:Song {songId: 'dummy1'}) DELETE s;
 ```
 ![Test 1 Delete (Ohne Detach)](./screenshots/C_delete_without_detach.png)
 
@@ -113,9 +140,9 @@ Wie erwartet, existiert der Knoten weiterhin, da die Datenbank die Löschung ver
 ![Test 2 Vorher](./screenshots/C_vorher_2.png)
 
 **Statement & Erfolgreiche Ausführung:**
-Wir verwenden nun `DETACH DELETE`. Die Datenbank löscht zuerst die Beziehungen (z.B. `ACTED_IN`) und anschliessend den Knoten.
+Wir verwenden nun `DETACH DELETE`. Die Datenbank löscht zuerst die Beziehung (`PERFORMED_BY`) und anschliessend den Knoten.
 ```cypher
-MATCH (m:Movie {title: 'Dummy Movie 2'}) DETACH DELETE m;
+MATCH (s:Song {songId: 'dummy2'}) DETACH DELETE s;
 ```
 ![Test 2 Delete (Mit Detach)](./screenshots/C_delete_with_detach.png)
 
@@ -129,25 +156,25 @@ Der Knoten und die zugehörigen Beziehungen wurden erfolgreich und restlos aus d
 
 Wir aktualisieren die bestehenden Datensätze anhand von drei spezifischen Anwendungsfällen.
 
-**Szenario 1:** Dem Film "Inception" soll nachträglich ein neues Attribut `rating` hinzugefügt werden, um eine Bewertung darzustellen.
+**Szenario 1:** Dem Album "Led Zeppelin IV" soll nachträglich ein neues Attribut `rating` hinzugefügt werden, um eine Bewertung darzustellen.
 ```cypher
-MATCH (m:Movie {title: 'Inception'}) 
-SET m.rating = 8.8 
-RETURN m;
+MATCH (a:Album {title: 'Led Zeppelin IV'}) 
+SET a.rating = 9.5 
+RETURN a;
 ```
 
-**Szenario 2:** Bei der Beziehung zwischen Christian Bale und "The Dark Knight" soll die Eigenschaft `roles` aktualisiert werden, um präzise auf "Batman" zu verweisen. Dies demonstriert das Verändern von Eigenschaften auf Kanten (Beziehungen).
+**Szenario 2:** Bei der `IS_MEMBER_OF`-Beziehung zwischen Jimmy Page und Led Zeppelin soll die Eigenschaft `role` aktualisiert werden, um präzise auf "Lead Guitarist" zu verweisen. Dies demonstriert das Verändern von Eigenschaften auf Kanten (Beziehungen).
 ```cypher
-MATCH (p:Person {name: 'Christian Bale'})-[r:ACTED_IN]->(m:Movie {title: 'The Dark Knight'}) 
-SET r.roles = ['Batman'] 
+MATCH (m:Musician {stageName: 'Jimmy Page'})-[r:IS_MEMBER_OF]->(b:Band {name: 'Led Zeppelin'}) 
+SET r.role = 'Lead Guitarist' 
 RETURN r;
 ```
 
-**Szenario 3:** Der Titel des Originalfilms "The Matrix" soll zu "The Matrix 1" umbenannt werden.
+**Szenario 3:** Der Titel des Songs "Kashmir" soll zu "Kashmir (Live)" umbenannt werden.
 ```cypher
-MATCH (m:Movie {title: 'The Matrix'}) 
-SET m.title = 'The Matrix 1' 
-RETURN m;
+MATCH (s:Song {title: 'Kashmir'}) 
+SET s.title = 'Kashmir (Live)' 
+RETURN s;
 ```
 
 ### Ausführung (Screenshot)
@@ -163,26 +190,24 @@ Wir beleuchten zwei weitere, leistungsstarke Cypher-Klauseln: `UNWIND` und `WITH
 ### 1. `UNWIND`
 Die `UNWIND`-Klausel dekonstruiert eine Liste (Array) in einzelne Werte (Zeilen). Dies ist besonders nützlich, wenn man Arrays aus externen Quellen erhält und für jedes Element der Liste eine Operation (wie z.B. einen `CREATE`-Befehl) ausführen möchte.
 
-**Szenario:** Wir möchten in einem einzigen Durchlauf drei neue Schauspieler hinzufügen, deren Namen uns als kompakte Liste vorliegen.
+**Szenario:** Wir möchten in einem einzigen Durchlauf drei neue Musiker (weitere Queen-Mitglieder) hinzufügen, deren Namen uns als kompakte Liste vorliegen.
 ```cypher
-UNWIND ['Tom Hardy', 'Cillian Murphy', 'Michael Caine'] AS actorName
-CREATE (p:Person {name: actorName}) 
-RETURN p;
+UNWIND ['Brian May', 'Roger Taylor', 'John Deacon'] AS musicianName
+CREATE (m:Musician {musicianId: randomUUID(), stageName: musicianName, mainInstrumentCode: 'Unknown'}) 
+RETURN m;
 ```
 
 ### 2. `WITH` (inklusive Aggregation)
-Die `WITH`-Klausel fungiert wie ein Pipe-Operator oder ein temporäres `RETURN` innerhalb einer laufenden Abfrage. Sie erlaubt es, Variablen an den nächsten Teil der Query weiterzugeben, Zwischenergebnisse zu berechnen, zu aggregieren (z.B. zu zählen) oder zu sortieren, bevor die eigentliche Filterung (`WHERE`) oder Rückgabe (`RETURN`) stattfindet. 
+Die `WITH`-Klausel fungiert wie ein Pipe-Operator oder ein temporäres `RETURN` innerhalb einer laufenden Abfrage. Sie erlaubt es, Variablen an den nächsten Teil der Query weiterzugeben, Zwischenergebnisse zu berechnen, zu aggregieren (z.B. zu zählen) oder zu sortieren, bevor die eigentliche Filterung (`WHERE`) oder Rückgabe (`RETURN`) stattfindet.
 
-**Szenario:** Wir möchten alle Regisseure finden, die **mehr als einen** Film inszeniert haben. Wir zählen (`count(m)`) die inszenierten Filme pro Person und geben das Zwischenergebnis (`directedCount`) mit `WITH` weiter, um im Anschluss mit `WHERE directedCount > 1` danach filtern zu können.
+**Szenario:** Wir möchten alle Bands finden, die **mehr als einen** Auftritt (Gig) absolviert haben. Wir zählen (`count(g)`) die Auftritte pro Band und geben das Zwischenergebnis (`gigCount`) mit `WITH` weiter, um im Anschluss mit `WHERE gigCount > 1` danach filtern zu können.
 ```cypher
-MATCH (p:Person)-[:DIRECTED]->(m:Movie) 
-WITH p, count(m) AS directedCount 
-WHERE directedCount > 1 
-RETURN p.name, directedCount;
+MATCH (b:Band)-[:PERFORMED_AT]->(g:Gig) 
+WITH b, count(g) AS gigCount 
+WHERE gigCount > 1 
+RETURN b.name, gigCount;
 ```
 
 ### Ausführung (Screenshot)
 
 ![Zusätzliche Klauseln - Ausführung](./screenshots/E_queries.png)
-
-

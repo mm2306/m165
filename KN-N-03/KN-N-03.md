@@ -36,7 +36,7 @@ In der `pom.xml` ist die offizielle Neo4j Java Driver Dependency (`neo4j-java-dr
 
 ## 2. Java-Implementierung (`Neo4jApp.java`)
 
-Das Java-Programm verbindet sich über das `bolt`-Protokoll mit der Neo4j-Instanz auf Port `7688` (mit Benutzer `neo4j` und Passwort `testpassword`), löscht bestehende Daten und fügt ein zusammenhängendes Netzwerk von Filmen, Personen und deren Beziehungen (ACTED_IN, DIRECTED) ein. Danach listet es alle Filme auf, bei denen Christopher Nolan Regie geführt hat.
+Das Java-Programm verbindet sich über das `bolt`-Protokoll mit der Neo4j-Instanz auf Port `7688` (mit Benutzer `neo4j` und Passwort `testpassword`), löscht bestehende Daten und fügt ein zusammenhängendes Netzwerk von Musikern, Bands, Songs, Alben und Auftritten (Gigs) basierend auf dem Band-Projekt aus KN-N-01 / KN-M-03 ein. Danach listet es alle Songs von Led Zeppelin auf.
 
 ```java
 package ch.tbz.kn03;
@@ -72,50 +72,77 @@ public class Neo4jApp {
                     return null;
                 });
 
-                // 2. Testdaten einfügen
-                System.out.println("Inserting movie and person nodes with relationships...");
+                // 2. Testdaten einfügen (Band-Projekt)
+                System.out.println("Inserting musician, band, song, album and gig nodes with relationships...");
                 session.executeWrite(tx -> {
                     String createQuery = 
                         "CREATE " +
-                        "  (m1:Movie {title: 'The Matrix', released: 1999, tagline: 'Welcome to the Real World'}), " +
-                        "  (m2:Movie {title: 'Inception', released: 2010, tagline: 'Your mind is the scene of the crime'}), " +
-                        "  (m3:Movie {title: 'Interstellar', released: 2014, tagline: 'Mankind was born on Earth. It was never meant to die here.'}), " +
-                        "  (m4:Movie {title: 'The Dark Knight', released: 2008, tagline: 'Why So Serious?'}), " +
+                        "  (m1:Musician {musicianId: 'm1', stageName: 'Jimmy Page', mainInstrumentCode: 'G', email: 'jimmy.page@ledzeppelin.com'}), " +
+                        "  (m2:Musician {musicianId: 'm2', stageName: 'Robert Plant', mainInstrumentCode: 'V', email: 'robert.plant@ledzeppelin.com'}), " +
+                        "  (m3:Musician {musicianId: 'm3', stageName: 'John Paul Jones', mainInstrumentCode: 'B', email: 'jpj@ledzeppelin.com'}), " +
+                        "  (m4:Musician {musicianId: 'm4', stageName: 'John Bonham', mainInstrumentCode: 'D', email: 'bonzo@ledzeppelin.com'}), " +
+                        "  (m5:Musician {musicianId: 'm5', stageName: 'Freddie Mercury', mainInstrumentCode: 'V', email: 'freddie@queen.com'}), " +
                         "   " +
-                        "  (p1:Person {name: 'Keanu Reeves', born: 1964}), " +
-                        "  (p2:Person {name: 'Carrie-Anne Moss', born: 1967}), " +
-                        "  (p3:Person {name: 'Leonardo DiCaprio', born: 1974}), " +
-                        "  (p4:Person {name: 'Matthew McConaughey', born: 1969}), " +
-                        "  (p5:Person {name: 'Christopher Nolan', born: 1970}), " +
-                        "  (p6:Person {name: 'Christian Bale', born: 1974}), " +
+                        "  (b1:Band {bandId: 'b1', name: 'Led Zeppelin', formedDate: date('1968-09-01'), genre: 'Hard Rock'}), " +
+                        "  (b2:Band {bandId: 'b2', name: 'Queen', formedDate: date('1970-06-01'), genre: 'Rock'}), " +
+                        "  (b3:Band {bandId: 'b3', name: 'The Who', formedDate: date('1964-01-01'), genre: 'Rock'}), " +
                         "   " +
-                        "  (p1)-[:ACTED_IN {roles: ['Neo']}]->(m1), " +
-                        "  (p2)-[:ACTED_IN {roles: ['Trinity']}]->(m1), " +
-                        "  (p3)-[:ACTED_IN {roles: ['Cobb']}]->(m2), " +
-                        "  (p5)-[:DIRECTED]->(m2), " +
-                        "  (p4)-[:ACTED_IN {roles: ['Cooper']}]->(m3), " +
-                        "  (p5)-[:DIRECTED]->(m3), " +
-                        "  (p6)-[:ACTED_IN {roles: ['Bruce Wayne']}]->(m4), " +
-                        "  (p5)-[:DIRECTED]->(m4)";
+                        "  (s1:Song {songId: 's1', title: 'Stairway to Heaven', durationMin: 8.02, bpm: 73}), " +
+                        "  (s2:Song {songId: 's2', title: 'Whole Lotta Love', durationMin: 5.34, bpm: 90}), " +
+                        "  (s3:Song {songId: 's3', title: 'Kashmir', durationMin: 8.28, bpm: 80}), " +
+                        "  (s4:Song {songId: 's4', title: 'Bohemian Rhapsody', durationMin: 5.55, bpm: 72}), " +
+                        "  (s5:Song {songId: 's5', title: 'Another One Bites the Dust', durationMin: 3.35, bpm: 110}), " +
+                        "  (s6:Song {songId: 's6', title: 'We Will Rock You', durationMin: 2.01, bpm: 81}), " +
+                        "   " +
+                        "  (a1:Album {albumId: 'a1', title: 'Led Zeppelin IV', releaseDate: date('1971-11-08'), format: 'LP'}), " +
+                        "  (a2:Album {albumId: 'a2', title: 'Led Zeppelin II', releaseDate: date('1969-10-22'), format: 'LP'}), " +
+                        "  (a3:Album {albumId: 'a3', title: 'A Night at the Opera', releaseDate: date('1975-11-21'), format: 'LP'}), " +
+                        "  (a4:Album {albumId: 'a4', title: 'The Game', releaseDate: date('1980-06-30'), format: 'LP'}), " +
+                        "   " +
+                        "  (g1:Gig {gigId: 'g1', venue: 'Madison Square Garden', date: date('1973-07-27'), ticketPrice: 7.50}), " +
+                        "  (g2:Gig {gigId: 'g2', venue: 'Wembley Stadium', date: date('1986-07-12'), ticketPrice: 14.50}), " +
+                        "  (g3:Gig {gigId: 'g3', venue: 'Royal Albert Hall', date: date('1970-01-09'), ticketPrice: 3.00}), " +
+                        "   " +
+                        "  (m1)-[:IS_MEMBER_OF {role: 'Guitarist', joinedDate: date('1968-09-01')}]->(b1), " +
+                        "  (m2)-[:IS_MEMBER_OF {role: 'Vocalist', joinedDate: date('1968-09-01')}]->(b1), " +
+                        "  (m3)-[:IS_MEMBER_OF {role: 'Bassist', joinedDate: date('1968-09-01')}]->(b1), " +
+                        "  (m4)-[:IS_MEMBER_OF {role: 'Drummer', joinedDate: date('1968-09-01')}]->(b1), " +
+                        "  (m5)-[:IS_MEMBER_OF {role: 'Lead Vocalist', joinedDate: date('1970-06-01')}]->(b2), " +
+                        "   " +
+                        "  (s1)-[:PERFORMED_BY]->(b1), " +
+                        "  (s2)-[:PERFORMED_BY]->(b1), " +
+                        "  (s3)-[:PERFORMED_BY]->(b1), " +
+                        "  (s4)-[:PERFORMED_BY]->(b2), " +
+                        "  (s5)-[:PERFORMED_BY]->(b2), " +
+                        "  (s6)-[:PERFORMED_BY]->(b2), " +
+                        "   " +
+                        "  (a1)-[:INCLUDES {trackNo: 4, isBonus: false}]->(s1), " +
+                        "  (a2)-[:INCLUDES {trackNo: 1, isBonus: false}]->(s2), " +
+                        "  (a3)-[:INCLUDES {trackNo: 11, isBonus: false}]->(s4), " +
+                        "  (a4)-[:INCLUDES {trackNo: 3, isBonus: false}]->(s5), " +
+                        "   " +
+                        "  (b1)-[:PERFORMED_AT]->(g1), " +
+                        "  (b1)-[:PERFORMED_AT]->(g3), " +
+                        "  (b2)-[:PERFORMED_AT]->(g2)";
                     tx.run(createQuery);
                     return null;
                 });
                 System.out.println("Data successfully inserted!");
 
-                // 3. Daten abfragen (Filme von Christopher Nolan)
-                System.out.println("\nQuerying: Movies directed by Christopher Nolan...");
+                // 3. Daten abfragen (Songs von Led Zeppelin)
+                System.out.println("\nQuerying: Songs performed by Led Zeppelin...");
                 session.executeRead(tx -> {
                     Result result = tx.run(
-                        "MATCH (p:Person {name: 'Christopher Nolan'})-[:DIRECTED]->(m:Movie) " +
-                        "RETURN m.title AS title, m.released AS released " +
-                        "ORDER BY m.released DESC"
+                        "MATCH (s:Song)-[:PERFORMED_BY]->(b:Band {name: 'Led Zeppelin'}) " +
+                        "RETURN s.title AS title, s.durationMin AS duration " +
+                        "ORDER BY s.title"
                     );
                     
                     while (result.hasNext()) {
                         Record record = result.next();
                         String title = record.get("title").asString();
-                        int released = record.get("released").asInt();
-                        System.out.printf(" - %s (%d)\n", title, released);
+                        double duration = record.get("duration").asDouble();
+                        System.out.printf(" - %s (%.2f min)\n", title, duration);
                     }
                     return null;
                 });
